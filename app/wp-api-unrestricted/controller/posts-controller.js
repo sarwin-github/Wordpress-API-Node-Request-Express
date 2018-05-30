@@ -9,7 +9,7 @@ const headers = { 'Content-Type':'application/x-www-form-urlencoded' };
 module.exports.getPostsList = (req, res) => {
 	// Request data
 	let posts = {
-	    url: 'http://luisrojascr.com/entrenami/wp-json/wp/v2/posts',
+	    url: 'http://demo.wp-api.org/wp-json/wp/v2/posts',
 	    method: 'GET',
 	    headers: headers
 	}
@@ -22,7 +22,7 @@ module.exports.getPostsList = (req, res) => {
 module.exports.getPostDetails = (req, res) => {
 	// Request data
 	let posts = {
-	    url: 'http://luisrojascr.com/entrenami/wp-json/wp/v2/posts/' + req.params.id,
+	    url: 'http://demo.wp-api.org/wp-json/wp/v2/posts/' + req.params.id,
 	    method: 'GET',
 	    headers: headers
 	}
@@ -60,16 +60,16 @@ module.exports.getPostsUsersComments = (req, res) => {
 
     // Configure the request
     let requests = [{
-        url: 'http://luisrojascr.com/entrenami/wp-json/wp/v2/posts/' + req.params.id,
+        url: 'http://demo.wp-api.org/wp-json/wp/v2/posts/' + req.params.id,
         method: 'GET',
         headers: headers,
     }, {
-        url: 'http://luisrojascr.com/entrenami/wp-json/wp/v2/comments',
+        url: 'http://demo.wp-api.org/wp-json/wp/v2/comments',
         method: 'GET',
         headers: headers,
         qs: { "post": req.params.id }
     }, {
-        url: 'http://luisrojascr.com/entrenami/wp-json/wp/v2/users' ,
+        url: 'http://demo.wp-api.org/wp-json/wp/v2/users' ,
         method: 'GET',
         headers: headers
     }];
